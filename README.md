@@ -1,13 +1,13 @@
 # terraform-aws-imagebuilder
 
-[![Build Status](https://github.com/JamesWoolfenden/terraform-aws-aurora/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-aws-aurora)
-[![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-aurora.svg)](https://github.com/JamesWoolfenden/terraform-aws-aurora/releases/latest)
-[![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/JamesWoolfenden/terraform-aws-aurora.svg?label=latest)](https://github.com/JamesWoolfenden/terraform-aws-aurora/releases/latest)
+[![Build Status](https://github.com/JamesWoolfenden/terraform-aws-imagebuilder/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-aws-imagebuilder)
+[![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-imagebuilder.svg)](https://github.com/JamesWoolfenden/terraform-aws-imagebuilder/releases/latest)
+[![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/JamesWoolfenden/terraform-aws-imagebuilder.svg?label=latest)](https://github.com/JamesWoolfenden/terraform-aws-imagebuilder/releases/latest)
 ![Terraform Version](https://img.shields.io/badge/tf-%3E%3D0.14.0-blue.svg)
-[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/JamesWoolfenden/terraform-aws-aurora/cis_aws)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=JamesWoolfenden%2Fterraform-aws-aurora&benchmark=CIS+AWS+V1.2)
+[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/JamesWoolfenden/terraform-aws-imagebuilder/cis_aws)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=JamesWoolfenden%2Fterraform-aws-imagebuilder&benchmark=CIS+AWS+V1.2)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![checkov](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
-[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/jameswoolfenden/terraform-aws-aurora/general)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=JamesWoolfenden%2Fterraform-aws-aurora&benchmark=INFRASTRUCTURE+SECURITY)
+[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/jameswoolfenden/terraform-aws-imagebuilder/general)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=JamesWoolfenden%2Fterraform-aws-imagebuilder&benchmark=INFRASTRUCTURE+SECURITY)
 
 Terraform module - creates Aurpora cluster and instances
 
@@ -22,8 +22,8 @@ This is just a basic illustration of the resources.
 Include this repository as a module in your existing terraform code:
 
 ```terraform
-module "aurora" {
-  source          = "JamesWoolfenden/aurora/aws"
+module "imagebuilder" {
+  source          = "JamesWoolfenden/imagebuilder/aws"
   version         = "0.0.2"
   common_tags     = var.common_tags
   instances       = var.instances
@@ -67,35 +67,21 @@ No Modules.
 
 | Name |
 |------|
-| [aws_availability_zones](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/availability_zones) |
-| [aws_rds_cluster](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/rds_cluster) |
-| [aws_rds_cluster_instance](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/rds_cluster_instance) |
-| [aws_rds_cluster_parameter_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/rds_cluster_parameter_group) |
+| [aws_imagebuilder_component](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/imagebuilder_component) |
+| [aws_imagebuilder_image](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/imagebuilder_image) |
+| [aws_imagebuilder_image_recipe](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/imagebuilder_image_recipe) |
+| [aws_imagebuilder_infrastructure_configuration](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/imagebuilder_infrastructure_configuration) |
+| [aws_region](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/region) |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| availability\_zone | n/a | `string` | `""` | no |
-| cluster | All the properties of an Aurora Cluster | `map(any)` | n/a | yes |
 | common\_tags | This is to help you add tags to your cloud objects | `map(any)` | n/a | yes |
-| enabled\_cloudwatch\_logs\_exports | Set of log types to export to cloudwatch. If omitted, no logs will be exported | `list(any)` | <pre>[<br>  "audit"<br>]</pre> | no |
-| engine | n/a | `string` | `"aurora"` | no |
-| engine\_version | n/a | `string` | `"5.7.mysql_aurora.2.03.2"` | no |
-| instances | Settings of you database instances | `any` | n/a | yes |
-| kms\_key\_id | n/a | `string` | n/a | yes |
-| master\_password | n/a | `string` | n/a | yes |
-| monitoring\_interval | n/a | `number` | `0` | no |
-| monitoring\_role\_arn | n/a | `string` | `""` | no |
-| preferred\_backup\_window | n/a | `string` | `"04:00-09:00"` | no |
-| promotion\_tier | Failover Priority setting on instance level. The reader who has lower tier has higher priority to get promoted to writer | `number` | `0` | no |
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| cluster | n/a |
-| instances | n/a |
+No output.
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Related Projects
@@ -108,13 +94,13 @@ Check out these related projects.
 
 **Got a question?**
 
-File a GitHub [issue](https://github.com/JamesWoolfenden/terraform-aws-aurora/issues).
+File a GitHub [issue](https://github.com/JamesWoolfenden/terraform-aws-imagebuilder/issues).
 
 ## Contributing
 
 ### Bug Reports & Feature Requests
 
-Please use the [issue tracker](https://github.com/JamesWoolfenden/terraform-aws-aurora/issues) to report any bugs or file feature requests.
+Please use the [issue tracker](https://github.com/JamesWoolfenden/terraform-aws-imagebuilder/issues) to report any bugs or file feature requests.
 
 ## Copyrights
 
@@ -152,8 +138,8 @@ under the License.
 [github]: https://github.com/jameswoolfenden
 [linkedin]: https://www.linkedin.com/in/jameswoolfenden/
 [twitter]: https://twitter.com/JimWoolfenden
-[share_twitter]: https://twitter.com/intent/tweet/?text=terraform-aws-aurora&url=https://github.com/JamesWoolfenden/terraform-aws-aurora
-[share_linkedin]: https://www.linkedin.com/shareArticle?mini=true&title=terraform-aws-aurora&url=https://github.com/JamesWoolfenden/terraform-aws-aurora
-[share_reddit]: https://reddit.com/submit/?url=https://github.com/JamesWoolfenden/terraform-aws-aurora
-[share_facebook]: https://facebook.com/sharer/sharer.php?u=https://github.com/JamesWoolfenden/terraform-aws-aurora
-[share_email]: mailto:?subject=terraform-aws-aurora&body=https://github.com/JamesWoolfenden/terraform-aws-aurora
+[share_twitter]: https://twitter.com/intent/tweet/?text=terraform-aws-imagebuilder&url=https://github.com/JamesWoolfenden/terraform-aws-imagebuilder
+[share_linkedin]: https://www.linkedin.com/shareArticle?mini=true&title=terraform-aws-imagebuilder&url=https://github.com/JamesWoolfenden/terraform-aws-imagebuilder
+[share_reddit]: https://reddit.com/submit/?url=https://github.com/JamesWoolfenden/terraform-aws-imagebuilder
+[share_facebook]: https://facebook.com/sharer/sharer.php?u=https://github.com/JamesWoolfenden/terraform-aws-imagebuilder
+[share_email]: mailto:?subject=terraform-aws-imagebuilder&body=https://github.com/JamesWoolfenden/terraform-aws-imagebuilder
