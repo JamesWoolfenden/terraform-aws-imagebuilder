@@ -67,21 +67,40 @@ No Modules.
 
 | Name |
 |------|
+| [aws_iam_instance_profile](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_instance_profile) |
+| [aws_iam_role](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) |
+| [aws_iam_role_policy_attachment](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) |
 | [aws_imagebuilder_component](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/imagebuilder_component) |
+| [aws_imagebuilder_distribution_configuration](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/imagebuilder_distribution_configuration) |
 | [aws_imagebuilder_image](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/imagebuilder_image) |
+| [aws_imagebuilder_image_pipeline](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/imagebuilder_image_pipeline) |
 | [aws_imagebuilder_image_recipe](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/imagebuilder_image_recipe) |
 | [aws_imagebuilder_infrastructure_configuration](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/imagebuilder_infrastructure_configuration) |
+| [aws_partition](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/partition) |
 | [aws_region](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/region) |
+| [aws_s3_bucket](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket) |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | common\_tags | This is to help you add tags to your cloud objects | `map(any)` | n/a | yes |
+| component | n/a | `string` | n/a | yes |
+| component\_name | n/a | `string` | `"examplea"` | no |
+| component\_version | n/a | `string` | `"1.0.0"` | no |
+| dist\_name | n/a | `string` | `"examplea"` | no |
+| instance\_profile\_name | n/a | `string` | `"examplea"` | no |
+| platform | n/a | `string` | `"Linux"` | no |
+| user\_ids | n/a | `list(any)` | `[]` | no |
 
 ## Outputs
 
-No output.
+| Name | Description |
+|------|-------------|
+| component | n/a |
+| configuration | n/a |
+| image | n/a |
+| recipe | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Related Projects
