@@ -27,3 +27,7 @@ variable "component_version" {
 variable "instance_profile_name" {
   default = "examplea"
 }
+
+variable "kms_key" {
+
+}

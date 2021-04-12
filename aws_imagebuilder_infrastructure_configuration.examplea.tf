@@ -22,12 +22,3 @@ resource "aws_imagebuilder_infrastructure_configuration" "examplea" {
 
   tags = var.common_tags
 }
-
-resource "aws_s3_bucket" "imagebuilder" {
-  #checkov:skip=CKV_AWS_19:
-  #checkov:skip=CKV_AWS_18:
-  #checkov:skip=CKV_AWS_52:
-  #checkov:skip=CKV_AWS_21:
-
-  bucket_prefix = "imagebuilder"
-}

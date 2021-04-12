@@ -1,6 +1,6 @@
 # terraform-aws-imagebuilder
 
-[![Build Status](https://github.com/JamesWoolfenden/terraform-aws-imagebuilder/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-aws-imagebuilder)
+[![Build Status](https://github.com/JamesWoolfenden/terraform-aws-imagebuilder/workflows/Verify%20and%20Bump/badge.svg?branch=main)](https://github.com/JamesWoolfenden/terraform-aws-imagebuilder)
 [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-imagebuilder.svg)](https://github.com/JamesWoolfenden/terraform-aws-imagebuilder/releases/latest)
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/JamesWoolfenden/terraform-aws-imagebuilder.svg?label=latest)](https://github.com/JamesWoolfenden/terraform-aws-imagebuilder/releases/latest)
 ![Terraform Version](https://img.shields.io/badge/tf-%3E%3D0.14.0-blue.svg)
