@@ -3,11 +3,12 @@
 *.tfstate.backup
 *.zip
 .DS_Store
-.vscode/
 # Module directory
 .terraform/
 .terraform
+.plugins/
 __pycache__/
+.vscode/
 .idea
 *.iml
 *.orig
