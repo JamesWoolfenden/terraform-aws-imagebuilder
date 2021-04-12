@@ -57,50 +57,51 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| aws | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
 
 ## Modules
 
-No Modules.
+No modules.
 
 ## Resources
 
-| Name |
-|------|
-| [aws_iam_instance_profile](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_instance_profile) |
-| [aws_iam_role](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) |
-| [aws_iam_role_policy_attachment](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) |
-| [aws_imagebuilder_component](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/imagebuilder_component) |
-| [aws_imagebuilder_distribution_configuration](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/imagebuilder_distribution_configuration) |
-| [aws_imagebuilder_image](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/imagebuilder_image) |
-| [aws_imagebuilder_image_pipeline](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/imagebuilder_image_pipeline) |
-| [aws_imagebuilder_image_recipe](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/imagebuilder_image_recipe) |
-| [aws_imagebuilder_infrastructure_configuration](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/imagebuilder_infrastructure_configuration) |
-| [aws_partition](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/partition) |
-| [aws_region](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/region) |
-| [aws_s3_bucket](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket) |
+| Name | Type |
+|------|------|
+| [aws_iam_instance_profile.examplea](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_instance_profile) | resource |
+| [aws_iam_role.ssm](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
+| [aws_iam_role_policy_attachment.builder](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
+| [aws_imagebuilder_component.examplea](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/imagebuilder_component) | resource |
+| [aws_imagebuilder_distribution_configuration.examplea](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/imagebuilder_distribution_configuration) | resource |
+| [aws_imagebuilder_image.examplea](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/imagebuilder_image) | resource |
+| [aws_imagebuilder_image_pipeline.examplea](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/imagebuilder_image_pipeline) | resource |
+| [aws_imagebuilder_image_recipe.examplea](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/imagebuilder_image_recipe) | resource |
+| [aws_imagebuilder_infrastructure_configuration.examplea](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/imagebuilder_infrastructure_configuration) | resource |
+| [aws_s3_bucket.imagebuilder](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket) | resource |
+| [aws_partition.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/partition) | data source |
+| [aws_region.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/region) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| common\_tags | This is to help you add tags to your cloud objects | `map(any)` | n/a | yes |
-| component | n/a | `string` | n/a | yes |
-| component\_name | n/a | `string` | `"examplea"` | no |
-| component\_version | n/a | `string` | `"1.0.0"` | no |
-| dist\_name | n/a | `string` | `"examplea"` | no |
-| instance\_profile\_name | n/a | `string` | `"examplea"` | no |
-| platform | n/a | `string` | `"Linux"` | no |
-| user\_ids | n/a | `list(any)` | `[]` | no |
+| <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | This is to help you add tags to your cloud objects | `map(any)` | n/a | yes |
+| <a name="input_component"></a> [component](#input\_component) | n/a | `string` | n/a | yes |
+| <a name="input_component_name"></a> [component\_name](#input\_component\_name) | n/a | `string` | `"examplea"` | no |
+| <a name="input_component_version"></a> [component\_version](#input\_component\_version) | n/a | `string` | `"1.0.0"` | no |
+| <a name="input_dist_name"></a> [dist\_name](#input\_dist\_name) | n/a | `string` | `"examplea"` | no |
+| <a name="input_instance_profile_name"></a> [instance\_profile\_name](#input\_instance\_profile\_name) | n/a | `string` | `"examplea"` | no |
+| <a name="input_kms_key"></a> [kms\_key](#input\_kms\_key) | n/a | `any` | n/a | yes |
+| <a name="input_platform"></a> [platform](#input\_platform) | n/a | `string` | `"Linux"` | no |
+| <a name="input_user_ids"></a> [user\_ids](#input\_user\_ids) | n/a | `list(any)` | `[]` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| component | n/a |
-| configuration | n/a |
-| image | n/a |
-| recipe | n/a |
+| <a name="output_component"></a> [component](#output\_component) | n/a |
+| <a name="output_configuration"></a> [configuration](#output\_configuration) | n/a |
+| <a name="output_image"></a> [image](#output\_image) | n/a |
+| <a name="output_recipe"></a> [recipe](#output\_recipe) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Related Projects

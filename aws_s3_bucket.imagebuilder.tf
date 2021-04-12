@@ -1,4 +1,6 @@
 resource "aws_s3_bucket" "imagebuilder" {
+  # tfsec:ignore:AWS002
+  # tfsec:ignore:AWS077
   # checkov:skip=CKV_AWS_145: todo
   # checkov:skip=CKV_AWS_144: todo
   # checkov:skip=CKV_AWS_19:
