@@ -4,6 +4,6 @@ resource "aws_imagebuilder_component" "examplea" {
   platform   = var.platform
   version    = var.component_version
   kms_key_id = var.kms_key.arn
-  //supported_os_versions = ["Linux"]
+
   tags = var.common_tags
 }
