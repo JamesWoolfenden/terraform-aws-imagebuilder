@@ -8,7 +8,7 @@ resource "aws_imagebuilder_image_recipe" "examplea" {
       delete_on_termination = true
       volume_size           = 100
       volume_type           = "gp2"
-      kms_key_id            = "arn:aws:kms:eu-west-1:680235478471:alias/aws/ebs"
+      kms_key_id            = var.kms_key.arn
     }
   }
 

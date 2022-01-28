@@ -3,6 +3,7 @@ resource "aws_imagebuilder_distribution_configuration" "examplea" {
 
   distribution {
     ami_distribution_configuration {
+      kms_key_id = var.kms_key.arn
       ami_tags = {
         CostCenter = "IT"
       }
