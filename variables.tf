@@ -31,3 +31,14 @@ variable "instance_profile_name" {
 variable "kms_key" {
 
 }
+
+
+variable "subnet_id" {
+  type        = string
+  description = "(optional) describe your variable"
+}
+
+variable "security_group_ids" {
+  type        = list(string)
+  description = "(optional) describe your variable"
+}

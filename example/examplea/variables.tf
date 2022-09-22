@@ -9,6 +9,11 @@ variable "subnet_id" {
 }
 
 variable "security_group_ids" {
-  type        = string(list)
+  type        = list(string)
   description = "(optional) describe your variable"
+}
+
+variable "public_key" {
+  type        = string
+  description = "public key material"
 }

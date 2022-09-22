@@ -2,7 +2,7 @@ resource "aws_imagebuilder_infrastructure_configuration" "examplea" {
   description           = "examplea description"
   instance_profile_name = aws_iam_instance_profile.examplea.name
   instance_types        = ["t2.nano", "t3.micro"]
-  key_pair              = aws_key_pair.example.key_name
+  key_pair              = aws_key_pair.pike.key_name
   name                  = "examplea"
   security_group_ids = [
     "sg-bf9243da",
@@ -21,15 +21,4 @@ resource "aws_imagebuilder_infrastructure_configuration" "examplea" {
   }
 
   tags = var.common_tags
-}
-
-
-variable "subnet_id" {
-  type        = string
-  description = "(optional) describe your variable"
-}
-
-variable "security_group_ids" {
-  type        = string(list)
-  description = "(optional) describe your variable"
 }

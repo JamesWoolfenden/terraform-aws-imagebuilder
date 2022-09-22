@@ -4,6 +4,7 @@ module "imagebuilder" {
   kms_key            = aws_kms_key.imagebuilder
   subnet_id          = var.subnet_id
   security_group_ids = var.security_group_ids
+  public_key         = var.public_key
   component = yamlencode({
     phases = [{
       name = "build"
