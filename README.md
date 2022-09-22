@@ -76,6 +76,7 @@ No modules.
 | [aws_imagebuilder_image_pipeline.examplea](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/imagebuilder_image_pipeline) | resource |
 | [aws_imagebuilder_image_recipe.examplea](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/imagebuilder_image_recipe) | resource |
 | [aws_imagebuilder_infrastructure_configuration.examplea](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/imagebuilder_infrastructure_configuration) | resource |
+| [aws_key_pair.pike](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/key_pair) | resource |
 | [aws_s3_bucket.imagebuilder](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket) | resource |
 | [aws_s3_bucket_acl.imagebuilder](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_acl) | resource |
 | [aws_s3_bucket_public_access_block.imagebuilder](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_public_access_block) | resource |
@@ -95,6 +96,8 @@ No modules.
 | <a name="input_instance_profile_name"></a> [instance\_profile\_name](#input\_instance\_profile\_name) | n/a | `string` | `"examplea"` | no |
 | <a name="input_kms_key"></a> [kms\_key](#input\_kms\_key) | n/a | `any` | n/a | yes |
 | <a name="input_platform"></a> [platform](#input\_platform) | n/a | `string` | `"Linux"` | no |
+| <a name="input_security_group_ids"></a> [security\_group\_ids](#input\_security\_group\_ids) | (optional) describe your variable | `string(list)` | n/a | yes |
+| <a name="input_subnet_id"></a> [subnet\_id](#input\_subnet\_id) | (optional) describe your variable | `string` | n/a | yes |
 | <a name="input_user_ids"></a> [user\_ids](#input\_user\_ids) | n/a | `list(any)` | `[]` | no |
 
 ## Outputs
@@ -127,10 +130,24 @@ resource "aws_iam_policy" "terraform_pike" {
             "Sid": "VisualEditor0",
             "Effect": "Allow",
             "Action": [
+                "ec2:CreateKeyPair",
+                "ec2:DeleteKeyPair",
+                "ec2:DescribeAccountAttributes",
+                "ec2:DescribeImages",
+                "ec2:DescribeKeyPairs",
+                "ec2:ImportKeyPair"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
                 "iam:AddRoleToInstanceProfile",
                 "iam:AttachRolePolicy",
                 "iam:CreateInstanceProfile",
                 "iam:CreateRole",
+                "iam:CreateServiceLinkedRole",
                 "iam:DeleteInstanceProfile",
                 "iam:DeleteRole",
                 "iam:DetachRolePolicy",
@@ -145,7 +162,49 @@ resource "aws_iam_policy" "terraform_pike" {
             "Resource": "*"
         },
         {
-            "Sid": "VisualEditor1",
+            "Sid": "VisualEditor2",
+            "Effect": "Allow",
+            "Action": [
+                "imagebuilder:CreateComponent",
+                "imagebuilder:CreateDistributionConfiguration",
+                "imagebuilder:CreateImage",
+                "imagebuilder:CreateImagePipeline",
+                "imagebuilder:CreateImageRecipe",
+                "imagebuilder:CreateInfrastructureConfiguration",
+                "imagebuilder:DeleteComponent",
+                "imagebuilder:DeleteDistributionConfiguration",
+                "imagebuilder:DeleteImage",
+                "imagebuilder:DeleteImagePipeline",
+                "imagebuilder:DeleteImageRecipe",
+                "imagebuilder:DeleteInfrastructureConfiguration",
+                "imagebuilder:GetComponent",
+                "imagebuilder:GetDistributionConfiguration",
+                "imagebuilder:GetImage",
+                "imagebuilder:GetImagePipeline",
+                "imagebuilder:GetImageRecipe",
+                "imagebuilder:GetInfrastructureConfiguration",
+                "imagebuilder:Getimage",
+                "imagebuilder:TagResource",
+                "imagebuilder:UntagResource",
+                "imagebuilder:UpdateDistributionConfiguration",
+                "imagebuilder:UpdateImagePipeline",
+                "imagebuilder:UpdateInfrastructureConfiguration"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "VisualEditor3",
+            "Effect": "Allow",
+            "Action": [
+                "kms:Decrypt",
+                "kms:Encrypt",
+                "kms:GenerateDataKey",
+                "kms:GenerateDataKeyWithoutPlaintext"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "VisualEditor4",
             "Effect": "Allow",
             "Action": [
                 "s3:CreateBucket",
