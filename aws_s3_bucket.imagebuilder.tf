@@ -12,7 +12,6 @@ resource "aws_s3_bucket" "imagebuilder" {
   bucket_prefix = "imagebuilder"
   tags          = var.common_tags
 }
-
 resource "aws_s3_bucket_server_side_encryption_configuration" "imagebuilder" {
   bucket = aws_s3_bucket.imagebuilder.bucket
   rule {
@@ -22,7 +21,6 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "imagebuilder" {
     }
   }
 }
-
 resource "aws_s3_bucket_acl" "imagebuilder" {
   bucket = aws_s3_bucket.imagebuilder.bucket
   acl    = "private"

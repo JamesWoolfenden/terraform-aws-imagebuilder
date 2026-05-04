@@ -2,7 +2,6 @@ resource "aws_iam_instance_profile" "examplea" {
   name = var.instance_profile_name
   role = aws_iam_role.ssm.name
 }
-
 resource "aws_iam_role" "ssm" {
   name = "imagebuilder_ssm"
   path = "/"
@@ -23,7 +22,6 @@ resource "aws_iam_role" "ssm" {
 }
 EOF
 }
-
 resource "aws_iam_role_policy_attachment" "builder" {
   role       = aws_iam_role.ssm.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"

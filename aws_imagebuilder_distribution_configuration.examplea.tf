@@ -19,13 +19,10 @@ resource "aws_imagebuilder_distribution_configuration" "examplea" {
   }
   tags = var.common_tags
 }
-
-
 variable "dist_name" {
   type    = string
   default = "examplea"
 }
-
 variable "user_ids" {
   type    = list(any)
   default = []
