@@ -138,7 +138,9 @@ resource "aws_iam_policy" "terraform_pike" {
                 "ec2:DescribeKeyPairs",
                 "ec2:ImportKeyPair"
             ],
-            "Resource": "*"
+            "Resource": [
+                "*"
+            ]
         },
         {
             "Sid": "VisualEditor1",
@@ -160,7 +162,9 @@ resource "aws_iam_policy" "terraform_pike" {
                 "iam:PassRole",
                 "iam:RemoveRoleFromInstanceProfile"
             ],
-            "Resource": "*"
+            "Resource": [
+                "*"
+            ]
         },
         {
             "Sid": "VisualEditor2",
@@ -191,7 +195,9 @@ resource "aws_iam_policy" "terraform_pike" {
                 "imagebuilder:UpdateImagePipeline",
                 "imagebuilder:UpdateInfrastructureConfiguration"
             ],
-            "Resource": "*"
+            "Resource": [
+                "*"
+            ]
         },
         {
             "Sid": "VisualEditor3",
@@ -202,7 +208,9 @@ resource "aws_iam_policy" "terraform_pike" {
                 "kms:GenerateDataKey",
                 "kms:GenerateDataKeyWithoutPlaintext"
             ],
-            "Resource": "*"
+            "Resource": [
+                "*"
+            ]
         },
         {
             "Sid": "VisualEditor4",
@@ -230,9 +238,23 @@ resource "aws_iam_policy" "terraform_pike" {
                 "s3:ListBucket",
                 "s3:PutBucketAcl",
                 "s3:PutBucketPublicAccessBlock",
+                "s3:PutBucketTagging",
                 "s3:PutEncryptionConfiguration"
             ],
-            "Resource": "*"
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Sid": "VisualEditor5",
+            "Effect": "Allow",
+            "Action": [
+                "ssm:DeleteParameter",
+                "ssm:PutParameter"
+            ],
+            "Resource": [
+                "*"
+            ]
         }
     ]
 })
