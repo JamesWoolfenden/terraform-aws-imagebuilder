@@ -1,6 +1,6 @@
 # terraform-aws-imagebuilder
 
-[![Build Status](https://github.com/JamesWoolfenden/terraform-aws-imagebuilder/workflows/Verify%20and%20Bump/badge.svg?branch=main)](https://github.com/JamesWoolfenden/terraform-aws-imagebuilder)
+[![Build Status](https://github.com/JamesWoolfenden/terraform-aws-imagebuilder/workflows/Verify/badge.svg?branch=main)](https://github.com/JamesWoolfenden/terraform-aws-imagebuilder)
 [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-imagebuilder.svg)](https://github.com/JamesWoolfenden/terraform-aws-imagebuilder/releases/latest)
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/JamesWoolfenden/terraform-aws-imagebuilder.svg?label=latest)](https://github.com/JamesWoolfenden/terraform-aws-imagebuilder/releases/latest)
 ![Terraform Version](https://img.shields.io/badge/tf-%3E%3D0.14.0-blue.svg)
@@ -56,8 +56,8 @@ No requirements.
 ## Providers
 
 | Name | Version |
-|------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
+| ---- | ------- |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 6.43.0 |
 
 ## Modules
 
@@ -66,7 +66,7 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [aws_iam_instance_profile.examplea](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_instance_profile) | resource |
 | [aws_iam_role.ssm](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
 | [aws_iam_role_policy_attachment.builder](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
@@ -87,7 +87,7 @@ No modules.
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | This is to help you add tags to your cloud objects | `map(any)` | n/a | yes |
 | <a name="input_component"></a> [component](#input\_component) | n/a | `string` | n/a | yes |
 | <a name="input_component_name"></a> [component\_name](#input\_component\_name) | n/a | `string` | `"examplea"` | no |
@@ -104,7 +104,7 @@ No modules.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_component"></a> [component](#output\_component) | n/a |
 | <a name="output_configuration"></a> [configuration](#output\_configuration) | n/a |
 | <a name="output_image"></a> [image](#output\_image) | n/a |
